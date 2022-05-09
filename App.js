@@ -5,7 +5,8 @@
  * @format
  * @flow strict-local
  */
-
+import {useEffect} from 'react';
+import SplashScreen from 'react-native-splash-screen'
 import React from 'react';
 import type {Node} from 'react';
 import {
@@ -54,6 +55,9 @@ const Section = ({children, title}): Node => {
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
+  useEffect(() => {
+    SplashScreen.hide();
+  },[]);
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
