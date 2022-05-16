@@ -7,7 +7,7 @@ const CheckB = (props) => {
 
   return (
     <View style={{flexDirection: 'row',justifyContent: 'space-evenly', alignItems: 'center', width: '60%'}}>
-    <Text style={{color: 'red',}}>{props.label}</Text>
+    <Text style={{color: 'white',}}>{props.label}</Text>
     <Checkbox
       uncheckedColor='white'
       color='white'

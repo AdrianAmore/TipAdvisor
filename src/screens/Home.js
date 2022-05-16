@@ -1,5 +1,6 @@
 import { Text, StyleSheet, View, Image } from 'react-native'
 import React, { Component } from 'react'
+import { Button } from 'react-native-paper';
 import utils from '../utils/utils.json'
 import Field from '../components/Field'
 import CheckB from '../components/CheckB'
@@ -20,9 +21,18 @@ export default class Home extends Component {
             <Field label="Comensales" type='numeric'></Field>
             <Field label="Porcentaje" type='numeric'></Field>
             <CheckB label='¿Redondear?'></CheckB>
-            
+            <Button mode="contained" color='white' style={{borderRadius: 15}} onPress={() => console.log('Pressed')}>
+            <Text style={{color: utils.colors.blue}}>Calcular</Text>
+            </Button>
           </View>
-        </View>
+          <Text style={{color: 'white', fontFamily: 'HARRINGT'}}>PLACEHOLDER</Text>
+          <View style={styles.grpBox}> 
+            <Text style={{color: 'white'}}>placeholder</Text>
+            <Button mode="contained" color='white' style={{borderRadius: 15}} onPress={() => console.log('Pressed')}>
+            <Text style={{color: utils.colors.blue}}>Realizar Encuesta</Text>
+            </Button>
+          </View>
+        </View >
         <View View style={styles.footer}>
         </View>
       </View>
@@ -46,7 +56,7 @@ const styles = StyleSheet.create({
   body: {
     flex: 5,
     width: '100%',
-    backgroundColor: 'pink',
+    backgroundColor: utils.colors.blue,
     alignItems: 'center',
     justifyContent: 'center'
   },

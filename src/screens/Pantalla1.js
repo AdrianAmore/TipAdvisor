@@ -5,7 +5,8 @@ export default class Pantalla1 extends Component {
   render() {
     return (
       <View>
-        <Field label='xd'></Field>
+        <Text style={{fontFamily: 'Macondo'}}>Hola soy Adri esto es un placeholder</Text>
+        <Text style={{fontFamily: 'Cormorant Garamond Regular'}}>Hola soy Adri esto es un placeholder</Text>
       </View>
     )
   }

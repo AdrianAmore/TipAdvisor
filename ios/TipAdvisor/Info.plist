@@ -69,6 +69,19 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
+		<string>HARRINGT.TTF</string>
+		<string>Harrington.TTF</string>
+		<string>Macondo.ttf</string>
+		<string>Cormorant Garamond Bold Italic.ttf</string>
+		<string>Cormorant Garamond Bold.ttf</string>
+		<string>Cormorant Garamond Italic.ttf</string>
+		<string>Cormorant Garamond Light.ttf</string>
+		<string>Cormorant Garamond LightItalic.ttf</string>
+		<string>Cormorant Garamond Medium Italic.ttf</string>
+		<string>Cormorant Garamond Medium.ttf</string>
+		<string>Cormorant Garamond Regular.ttf</string>
+		<string>Cormorant Garamond Semi Bold Italic.ttf</string>
+		<string>Cormorant Garamond Semi Bold.ttf</string>
 	</array>
 </dict>
 </plist>
