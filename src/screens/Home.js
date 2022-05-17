@@ -4,8 +4,14 @@ import { Button } from 'react-native-paper';
 import utils from '../utils/utils.json'
 import Field from '../components/Field'
 import CheckB from '../components/CheckB'
-export default class Home extends Component {
-  render() {
+export default function Home() {
+
+  const calcular = () =>{
+    
+  }
+
+
+
     return (
 
       <View style={styles.background}>
@@ -25,10 +31,10 @@ export default class Home extends Component {
             <Text style={{color: utils.colors.blue}}>Calcular</Text>
             </Button>
           </View>
-          <Text style={{color: 'white', fontFamily: 'HARRINGT'}}>PLACEHOLDER</Text>
+          <Text style={{color: 'white', fontFamily: 'HARRINGT', marginBottom:'-20%'}}>placeholder texto precio</Text>
           <View style={styles.grpBox}> 
-            <Text style={{color: 'white'}}>placeholder</Text>
-            <Button mode="contained" color='white' style={{borderRadius: 15}} onPress={() => console.log('Pressed')}>
+            <Text style={{color: 'white',marginBottom: '-40%'}}>placeholder texto encuesta</Text>
+            <Button mode="contained" color='white' style={{borderRadius: 15,   marginBottom: '-35%'}} onPress={() => console.log('Pressed')}>
             <Text style={{color: utils.colors.blue}}>Realizar Encuesta</Text>
             </Button>
           </View>
@@ -36,8 +42,8 @@ export default class Home extends Component {
         <View View style={styles.footer}>
         </View>
       </View>
-    )
-  }
+    );
+
 }
 
 
@@ -51,7 +57,7 @@ const styles = StyleSheet.create({
   footer: {
     flex: 0.1,
     width: '100%',
-    backgroundColor: 'yellow'
+    backgroundColor: utils.colors.blue
   },
   body: {
     flex: 5,
@@ -66,10 +72,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'green'
   },
   grpBox: {
-    display: 'flex',
+    flex : 1,
+    //display: 'flex',
     justifyContent: 'space-evenly',
     alignItems: 'center',
     flexDirection: 'column',
     width: '100%',
-  }
+  },
 });
