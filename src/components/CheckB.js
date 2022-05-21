@@ -14,6 +14,7 @@ const CheckB = (props) => {
       status={checked ? 'checked' : 'unchecked'}
       onPress={() => {
         setChecked(!checked);
+        props.changeValue(!checked)
       }}
     />
     </View>

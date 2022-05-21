@@ -5,11 +5,11 @@ import utils from '../utils/utils.json'
 import Field from '../components/Field'
 import CheckB from '../components/CheckB'
 function Home() {
-  const [total, setTotal] = useState()
-  const [comensales, setComensales] = useState()
-  const [porcentaje, setPorcentaje] = useState()
-  const [msgCalculo, setMsgCalculo] = useState()
-
+  const [total, setTotal] = useState("")
+  const [comensales, setComensales] = useState("")
+  const [porcentaje, setPorcentaje] = useState("")
+  const [msgCalculo, setMsgCalculo] = useState("")
+  const [checked, setChecked] = useState(false)
 
   const calcular = () => {
     var p = porcentaje / 100; //console.log(p)
@@ -17,11 +17,20 @@ function Home() {
     var totProp = parseFloat(propina) + parseFloat(total); //console.log(totProp)
     var split = propina / comensales
     var totSplit = (parseFloat(total) / parseFloat(comensales)) + parseFloat(split)
-    if (comensales > 1 && comensales != "") {
-      setMsgCalculo("Total: " + propina + "\nTotal + propina: " + totProp + "\nPropina por persona: " + split + "\nPrecio total + propina por persona: " + totSplit)
-    } else {
-      setMsgCalculo("Total: " + propina + "\nTotal + propina: " + totProp)
+    if (checked) {
+      propina = Math.round(propina)
+      totProp = Math.round(totProp)
+      split = Math.round(split)
+      totSplit = Math.round(totSplit)
     }
+    if (total != "" && porcentaje != "") {
+      if (comensales > 1 && comensales != "") {
+        setMsgCalculo("Total: " + propina + "€\nTotal + propina: " + totProp + "€\nPropina por persona: " + split + "€\nPrecio total + propina por persona: " + totSplit +"€")
+      } else {
+        setMsgCalculo("Total: " + propina + "€\nTotal + propina: " + totProp + "€")
+      }
+    }
+
 
   }
 
@@ -46,7 +55,7 @@ function Home() {
           <Field label="Total" type='numeric' changeValue={total => setTotal(total)} text={total}></Field>
           <Field label="Comensales" type='numeric' changeValue={comensales => setComensales(comensales)} text={comensales} ></Field>
           <Field label="Porcentaje" type='numeric' changeValue={porcentaje => setPorcentaje(porcentaje)} text={porcentaje}></Field>
-          <CheckB label='¿Redondear?'></CheckB>
+          <CheckB label='¿Redondear?' changeValue={checked => setChecked(checked)}></CheckB>
           <Button mode="contained" color='white' style={{ borderRadius: 15 }} onPress={() => calcular()}>
             <Text style={{ color: utils.colors.blue }}>Calcular</Text>
           </Button>
