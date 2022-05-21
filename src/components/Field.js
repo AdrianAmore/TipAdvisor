@@ -3,18 +3,18 @@ import React, { Component } from 'react'
 import { TextInput } from 'react-native-paper';
 const Field = (props) => {
   const [text, setText] = React.useState("");
-    return (
-      <View style={{flexDirection: 'row',justifyContent: 'space-evenly', alignItems: 'center', width: '60%'}}>
-        <Text style={{color: 'white',}}>{props.label}</Text>
-        <TextInput 
-        style={{width: '60%', height: 25,}}
+  return (
+    <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center', width: '60%' }}>
+      <Text style={{ color: 'white', }}>{props.label}</Text>
+      <TextInput
+        style={{ width: '60%', height: 25, }}
         label={props.label}
-        value={text}
+        value={props.text}
         mode='outlined'
-        keyboardType = {props.type}
-        onChangeText={text => setText(text)}
-        ></TextInput>
-      </View>
-    )
-} 
+        keyboardType={props.type}
+        onChangeText={text => { setText(text); props.changeValue(text) }}
+      ></TextInput>
+    </View>
+  )
+}
 export default Field;
