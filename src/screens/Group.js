@@ -16,7 +16,7 @@ export default function Group() {
       .changeLanguage(value)
       .then(() => { setLanguage(value) })
       .then(utils.lang = value)
-      .then(console.log(value))
+      .then(console.log(utils.lang))
       .catch(err => console.log(err));
   };
   return (

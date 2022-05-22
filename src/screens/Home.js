@@ -1,5 +1,5 @@
 import { Text, StyleSheet, View, Image } from 'react-native'
-import React, { Component, useState,useEffect } from 'react'
+import React, { Component, useState, useEffect } from 'react'
 import { Button } from 'react-native-paper';
 import utils from '../utils/utils.json'
 import Field from '../components/Field'
@@ -8,11 +8,12 @@ import '../../assets/i18n/i18n';
 import en from '../../assets/i18n/en.json'
 import es from '../../assets/i18n/es.json'
 import { useTranslation } from 'react-i18next';
-function Home({navigation}) {
-  //I18n
+function Home({ navigation }) {
   const { t, i18n } = useTranslation();
-  
-  const [currentLanguage, setLanguage] = useState(utils.lang);
+  const [currentLanguage, setLanguage] = useState("en");
+  useEffect(() => {
+    setLanguage(utils.lang)
+  });
   var p1
   var p2
   var p3
@@ -34,7 +35,10 @@ function Home({navigation}) {
       break;
 
     default:
-      p1=utils.colors.blue
+      p1 = en.translation.message.p1
+      p2 = en.translation.message.p2
+      p3 = en.translation.message.p3
+      p4 = en.translation.message.p4
       break;
   }
 

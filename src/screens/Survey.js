@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Text, StyleSheet, View, Image, Alert } from 'react-native'
 import utils from '../utils/utils.json'
 import StarRating2 from '../components/StarRating2';
@@ -9,8 +9,10 @@ import { useTranslation } from 'react-i18next';
 import { Button } from 'react-native-paper';
 export default function Survey({ navigation }) {
   const { t, i18n } = useTranslation();
-
-  const [currentLanguage, setLanguage] = useState(utils.lang);
+  const [currentLanguage, setLanguage] = useState("en");
+  useEffect(() => {
+    setLanguage(utils.lang)
+  });
   var voteCaption = ""
   var voteMessage = ""
 
@@ -48,7 +50,7 @@ export default function Survey({ navigation }) {
 
   const calcular = () => {
     var total = parseInt(quality) + parseInt(speed) + parseInt(service) + parseInt(quantity) + parseInt(place)
-    console.log(total)
+    //console.log(total)
   }
 
   const pressHandler = () => {
