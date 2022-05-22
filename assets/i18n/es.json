@@ -1,6 +1,20 @@
 {
-    "translation": {
-      "hello":"नमस्ते",
-      "this line is translated":"यह पंक्ति अनुवादित है"
+  "translation": {
+    "home": {
+      "total": "Total de la factura",
+      "split": "Numero de personas",
+      "percentage": "Porcentaje",
+      "round": "¿Redondear?",
+      "btnCalculate": "Calcular",
+      "btnClear": "Limpiar",
+      "survey": "¿No sabes que porcentaje proporcionar?",
+      "btnSurvey": "Realizar Encuesta"
+    },
+    "message":{
+      "p1": "Total: ",
+      "p2": "€\nTotal + propina: ",
+      "p3": "€\nPropina por persona: ",
+      "p4": "€\nPrecio total + propina por persona: "
     }
   }
+}

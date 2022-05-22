@@ -5,7 +5,7 @@ const Field = (props) => {
   const [text, setText] = React.useState("");
   return (
     <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center', width: '60%' }}>
-      <Text style={{ color: 'white', }}>{props.label}</Text>
+      <Text style={{ color: 'white', marginRight: 30 }}>{props.label}</Text>
       <TextInput
         style={{ width: '60%', height: 25, }}
         label={props.label}

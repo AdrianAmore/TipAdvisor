@@ -1,10 +1,44 @@
 import { Text, StyleSheet, View, Image } from 'react-native'
-import React, { Component, useState } from 'react'
+import React, { Component, useState,useEffect } from 'react'
 import { Button } from 'react-native-paper';
 import utils from '../utils/utils.json'
 import Field from '../components/Field'
 import CheckB from '../components/CheckB'
+import '../../assets/i18n/i18n';
+import en from '../../assets/i18n/en.json'
+import es from '../../assets/i18n/es.json'
+import { useTranslation } from 'react-i18next';
 function Home() {
+  //I18n
+  const { t, i18n } = useTranslation();
+  
+  const [currentLanguage, setLanguage] = useState(utils.lang);
+  var p1
+  var p2
+  var p3
+  var p4
+  switch (currentLanguage) {
+
+    case "en":
+      p1 = en.translation.message.p1
+      p2 = en.translation.message.p2
+      p3 = en.translation.message.p3
+      p4 = en.translation.message.p4
+      break;
+
+    case "es":
+      p1 = es.translation.message.p1
+      p2 = es.translation.message.p2
+      p3 = es.translation.message.p3
+      p4 = es.translation.message.p4
+      break;
+
+    default:
+      p1=utils.colors.blue
+      break;
+  }
+
+  //Calculo
   const [total, setTotal] = useState("")
   const [comensales, setComensales] = useState("")
   const [porcentaje, setPorcentaje] = useState("")
@@ -12,11 +46,17 @@ function Home() {
   const [checked, setChecked] = useState(false)
 
   const calcular = () => {
+    // console.log(p1)
+    // console.log(p2)
+    // console.log(p3)
+    // console.log(p4)
+    // console.log(currentLanguage)
     var p = porcentaje / 100; //console.log(p)
     var propina = total * p; //console.log(propina)
     var totProp = parseFloat(propina) + parseFloat(total); //console.log(totProp)
     var split = propina / comensales
     var totSplit = (parseFloat(total) / parseFloat(comensales)) + parseFloat(split)
+
     if (checked) {
       propina = Math.round(propina)
       totProp = Math.round(totProp)
@@ -25,13 +65,11 @@ function Home() {
     }
     if (total != "" && porcentaje != "") {
       if (comensales > 1 && comensales != "") {
-        setMsgCalculo("Total: " + propina + "€\nTotal + propina: " + totProp + "€\nPropina por persona: " + split + "€\nPrecio total + propina por persona: " + totSplit +"€")
+        setMsgCalculo(p1 + propina + p2 + totProp + p3 + split + p4 + totSplit + "€")
       } else {
-        setMsgCalculo("Total: " + propina + "€\nTotal + propina: " + totProp + "€")
+        setMsgCalculo(p1 + propina + p2 + totProp + "€")
       }
     }
-
-
   }
 
   const clear = () => {
@@ -41,8 +79,8 @@ function Home() {
     setMsgCalculo("")
   }
 
-  return (
 
+  return (
     <View style={styles.background}>
       <View style={styles.header}>
         <Image
@@ -52,22 +90,22 @@ function Home() {
       </View>
       <View View style={styles.body}>
         <View style={styles.grpBox}>
-          <Field label="Total" type='numeric' changeValue={total => setTotal(total)} text={total}></Field>
-          <Field label="Comensales" type='numeric' changeValue={comensales => setComensales(comensales)} text={comensales} ></Field>
-          <Field label="Porcentaje" type='numeric' changeValue={porcentaje => setPorcentaje(porcentaje)} text={porcentaje}></Field>
-          <CheckB label='¿Redondear?' changeValue={checked => setChecked(checked)}></CheckB>
+          <Field label={t('home.total')} type='numeric' changeValue={total => setTotal(total)} text={total}></Field>
+          <Field label={t('home.split')} type='numeric' changeValue={comensales => setComensales(comensales)} text={comensales} ></Field>
+          <Field label={t('home.percentage')} type='numeric' changeValue={porcentaje => setPorcentaje(porcentaje)} text={porcentaje}></Field>
+          <CheckB label={t('home.round')} changeValue={checked => setChecked(checked)}></CheckB>
           <Button mode="contained" color='white' style={{ borderRadius: 15 }} onPress={() => calcular()}>
-            <Text style={{ color: utils.colors.blue }}>Calcular</Text>
+            <Text style={{ color: utils.colors.blue }}>{t('home.btnCalculate')}</Text>
           </Button>
           <Button mode="contained" color='white' style={{ borderRadius: 15, height: 30, width: 100 }} onPress={() => clear()}>
-            <Text style={{ color: utils.colors.blue, fontSize: 10 }}>Limpiar</Text>
+            <Text style={{ color: utils.colors.blue, fontSize: 10 }}>{t('home.btnClear')}</Text>
           </Button>
         </View>
         <Text style={{ color: 'white', fontFamily: 'HARRINGT', marginBottom: '-20%' }}>{msgCalculo}</Text>
         <View style={styles.grpBox}>
-          <Text style={{ color: 'white', marginBottom: '-40%' }}>placeholder texto encuesta</Text>
-          <Button mode="contained" color='white' style={{ borderRadius: 15, marginBottom: '-35%' }} onPress={() => console.log('Pressed')}>
-            <Text style={{ color: utils.colors.blue }}>Realizar Encuesta</Text>
+          <Text style={{ color: 'white', marginBottom: '-40%' }}>{t('home.survey')}</Text>
+          <Button mode="contained" color='white' style={{ borderRadius: 15, marginBottom: '-35%' }} onPress={() => console.log()}>
+            <Text style={{ color: utils.colors.blue }}>{t('home.btnSurvey')}</Text>
           </Button>
         </View>
       </View >

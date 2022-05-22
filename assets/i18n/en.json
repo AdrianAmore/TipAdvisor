@@ -1,6 +1,20 @@
 {
-    "translation": {
-      "hello":"Hello",
-      "this line is translated":"This line is translated"
+  "translation": {
+    "home": {
+      "total": "Bill amount",
+      "split": "Number of people",
+      "percentage": "Percentage",
+      "round": "Round?",
+      "btnCalculate": "Calculate",
+      "btnClear": "Clear",
+      "survey": "Don't know what percentage to provide?",
+      "btnSurvey": "Take Survey"
+    },
+    "message":{
+      "p1": "Total: ",
+      "p2": "€\nTotal + tip: ",
+      "p3": "€\nTip each person: ",
+      "p4": "€\nTotal + tip each person: "
     }
   }
+}

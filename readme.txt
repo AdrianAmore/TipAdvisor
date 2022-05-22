@@ -11,3 +11,5 @@ react-native-vector-icons
 react-native link react-native-vector-icons
 npm install i18next --save
 npm i react-i18next
+npm install @react-navigation/stack
+npm install react-native-gesture-handler
