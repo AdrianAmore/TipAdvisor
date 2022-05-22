@@ -20,6 +20,17 @@
       "individual":"Individual",
       "group":"Group",
       "configuration":"Configuration"
+    },
+    "survey":{
+      "instructions": "Please, vote from 1 to 5 stars in the following categories and we will assign an amount according to your level of satisfaction.",
+      "quality":"Food quality",
+      "speed": "Service speed",
+      "service":"Service quality",
+      "quantity": "Food quantity",
+      "place":"Place quality",
+      "vote": "Vote",
+      "voteCaption": "Vote sent!",
+      "voteMessage":"We've assigned a percentage according to your votes."
     }
   }
 }
