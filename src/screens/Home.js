@@ -8,7 +8,7 @@ import '../../assets/i18n/i18n';
 import en from '../../assets/i18n/en.json'
 import es from '../../assets/i18n/es.json'
 import { useTranslation } from 'react-i18next';
-function Home() {
+function Home({navigation}) {
   //I18n
   const { t, i18n } = useTranslation();
   
@@ -104,7 +104,7 @@ function Home() {
         <Text style={{ color: 'white', fontFamily: 'HARRINGT', marginBottom: '-20%' }}>{msgCalculo}</Text>
         <View style={styles.grpBox}>
           <Text style={{ color: 'white', marginBottom: '-40%' }}>{t('home.survey')}</Text>
-          <Button mode="contained" color='white' style={{ borderRadius: 15, marginBottom: '-35%' }} onPress={() => console.log()}>
+          <Button mode="contained" color='white' style={{ borderRadius: 15, marginBottom: '-35%' }} onPress={() => navigation.navigate('Survey')}>
             <Text style={{ color: utils.colors.blue }}>{t('home.btnSurvey')}</Text>
           </Button>
         </View>

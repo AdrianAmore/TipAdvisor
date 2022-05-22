@@ -15,6 +15,11 @@
       "p2": "€\nTotal + tip: ",
       "p3": "€\nTip each person: ",
       "p4": "€\nTotal + tip each person: "
+    },
+    "main":{
+      "individual":"Individual",
+      "group":"Group",
+      "configuration":"Configuration"
     }
   }
 }

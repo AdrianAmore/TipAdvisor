@@ -15,6 +15,11 @@
       "p2": "€\nTotal + propina: ",
       "p3": "€\nPropina por persona: ",
       "p4": "€\nPrecio total + propina por persona: "
+    },
+    "main":{
+      "individual":"Individual",
+      "group":"Grupo",
+      "configuration":"Configuración"
     }
   }
 }

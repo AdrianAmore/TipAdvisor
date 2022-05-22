@@ -5,15 +5,21 @@
  * @format
  * @flow strict-local
  */
+
+import { createStackNavigator } from '@react-navigation/stack';
 import 'react-native-gesture-handler';
 import { useEffect } from 'react';
 import SplashScreen from 'react-native-splash-screen'
-import React from 'react';
 import Home from './src/screens/Home'
+import Survey from './src/screens/Survey'
+import Configuration from './src/screens/Configuration';
 import Pantalla1 from './src/screens/Pantalla1'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import type { Node } from 'react';
+import React, { useState } from 'react';
+import './assets/i18n/i18n';
+import { useTranslation } from 'react-i18next';
 import {
   SafeAreaView,
   ScrollView,
@@ -57,12 +63,26 @@ const Section = ({ children, title }): Node => {
     </View>
   );
 };
+const Stack = createStackNavigator();
+function MyStack() {
+  return (
+    <Stack.Navigator initialRouteName="Home" screenOptions={{
+      headerShown: false
+    }}>
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Survey" component={Survey} />
+    </Stack.Navigator>
+  );
+}
+
+
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
   useEffect(() => {
     SplashScreen.hide();
   }, []);
-
+  const { t, i18n } = useTranslation();
+  const [currentLanguage, setLanguage] = useState('en');
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
@@ -72,8 +92,9 @@ const App: () => Node = () => {
       <Drawer.Navigator initialRouteName="Home" screenOptions={{
         headerShown: false
       }}>
-        <Drawer.Screen name="Home" component={Home} />
-        <Drawer.Screen name="Pantalla1" component={Pantalla1} />
+        <Drawer.Screen name={t('main.individual')} component={MyStack} />
+        <Drawer.Screen name={t('main.group')} component={Pantalla1} />
+        <Drawer.Screen name={t('main.configuration')} component={Configuration} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
