@@ -4,5 +4,6 @@
         "red":"",
         "green":""
     },
-    "lang":"en"
+    "lang":"en",
+    "porciento": 0
 }

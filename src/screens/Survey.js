@@ -47,7 +47,7 @@ export default function Survey({ navigation }) {
   const [place, setPlace] = useState(place)
   if (typeof place === 'undefined') { setPlace(1) }
 
-
+var total
   const calcular = () => {
     var total = parseInt(quality) + parseInt(speed) + parseInt(service) + parseInt(quantity) + parseInt(place)
     //console.log(total)
@@ -56,7 +56,7 @@ export default function Survey({ navigation }) {
   const pressHandler = () => {
     calcular()
     Alert.alert(voteCaption, voteMessage,
-      [{ onPress: () => navigation.goBack() }])
+      [{ onPress: () => { utils.porciento = total; navigation.goBack() } }])
 
   }
 

@@ -31,6 +31,10 @@
       "vote": "Vote",
       "voteCaption": "Vote sent!",
       "voteMessage":"We've assigned a percentage according to your votes."
+    },
+    "configuration":{
+      "language":"Language",
+      "mode":"Mode"
     }
   }
 }

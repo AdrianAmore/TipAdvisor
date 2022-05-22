@@ -89,12 +89,11 @@ const App: () => Node = () => {
 
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home" screenOptions={{
+      <Drawer.Navigator screenOptions={{
         headerShown: false
       }}>
         <Drawer.Screen name={t('main.individual')} component={MyStack} />
         <Drawer.Screen name={t('main.group')} component={Group} />
-        <Drawer.Screen name={t('main.configuration')} component={Configuration} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

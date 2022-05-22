@@ -8,11 +8,16 @@ import '../../assets/i18n/i18n';
 import en from '../../assets/i18n/en.json'
 import es from '../../assets/i18n/es.json'
 import { useTranslation } from 'react-i18next';
+import CambiarIdioma from '../components/CambiarIdioma';
+
 function Home({ navigation }) {
   const { t, i18n } = useTranslation();
   const [currentLanguage, setLanguage] = useState("en");
   useEffect(() => {
     setLanguage(utils.lang)
+    if (parseInt(utils.porciento) != 0) {
+      setPorcentaje(porcentaje=utils.porciento.toString())
+    }
   });
   var p1
   var p2
@@ -45,7 +50,7 @@ function Home({ navigation }) {
   //Calculo
   const [total, setTotal] = useState("")
   const [comensales, setComensales] = useState("")
-  const [porcentaje, setPorcentaje] = useState("")
+  var [porcentaje, setPorcentaje] = useState("")
   const [msgCalculo, setMsgCalculo] = useState("")
   const [checked, setChecked] = useState(false)
 
@@ -77,20 +82,23 @@ function Home({ navigation }) {
   }
 
   const clear = () => {
+    console.log(porcentaje)
     setTotal("")
     setComensales("")
     setPorcentaje("")
     setMsgCalculo("")
+    utils.porciento = 0
   }
 
 
   return (
     <View style={styles.background}>
       <View style={styles.header}>
-        <Image
-          style={{ width: 200, height: 100, alignSelf: 'center' }}
+      <Image
+          style={{ width: 200, height: 100, alignSelf: 'flex-start' }}
           source={require('../img/placeholder.png')}
         />
+        <CambiarIdioma></CambiarIdioma>
       </View>
       <View View style={styles.body}>
         <View style={styles.grpBox}>
@@ -143,7 +151,8 @@ const styles = StyleSheet.create({
   header: {
     flex: 0.5,
     width: '100%',
-    backgroundColor: 'green'
+    backgroundColor: 'green',
+    flexDirection: 'row'
   },
   grpBox: {
     flex: 1,
