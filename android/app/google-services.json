@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "923738191561",
+    "firebase_url": "https://tipadvisor-8ee1a-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "tipadvisor-8ee1a",
+    "storage_bucket": "tipadvisor-8ee1a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923738191561:android:ab9033fdd91e8804f43f18",
+        "android_client_info": {
+          "package_name": "com.tipadvisor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "923738191561-5eqtn1f6hbk2f7pl2c22kskdl225j5f9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrUsqZfw-0ovBZVxLTZMHMI0ivyn8XXQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "923738191561-5eqtn1f6hbk2f7pl2c22kskdl225j5f9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
