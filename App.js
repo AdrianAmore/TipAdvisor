@@ -13,7 +13,7 @@ import SplashScreen from 'react-native-splash-screen'
 import Home from './src/screens/Home'
 import Survey from './src/screens/Survey'
 import Configuration from './src/screens/Configuration';
-import Pantalla1 from './src/screens/Pantalla1'
+import Group from './src/screens/Group'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import type { Node } from 'react';
@@ -93,7 +93,7 @@ const App: () => Node = () => {
         headerShown: false
       }}>
         <Drawer.Screen name={t('main.individual')} component={MyStack} />
-        <Drawer.Screen name={t('main.group')} component={Pantalla1} />
+        <Drawer.Screen name={t('main.group')} component={Group} />
         <Drawer.Screen name={t('main.configuration')} component={Configuration} />
       </Drawer.Navigator>
     </NavigationContainer>

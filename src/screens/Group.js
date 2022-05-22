@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import utils from '../utils/utils.json'
 import { Button } from 'react-native-paper';
 import { Text, View } from 'react-native'
-export default function Pantalla1() {
+export default function Group() {
 
   const { t, i18n } = useTranslation();
 
