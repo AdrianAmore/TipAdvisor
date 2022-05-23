@@ -13,3 +13,4 @@ npm install i18next --save
 npm i react-i18next
 npm install @react-navigation/stack
 npm install react-native-gesture-handler
+npm i axios
