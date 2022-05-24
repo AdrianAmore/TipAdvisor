@@ -5,7 +5,23 @@ import CambiarIdioma from '../components/CambiarIdioma';
 import utils from '../utils/utils.json'
 import { Button } from 'react-native-paper';
 import { Text, View } from 'react-native'
+
+
+//MySQL
+import axios from 'axios'
+
+
 export default function Group() {
+  //MySQL
+
+  const [id, setID] = useState("")
+  const [texto, setTexto] = useState("")
+
+  const getTexto = async() =>{
+    const respuesta = await axios.get('http://192.168.1.132/php/')
+  }
+
+  //////////////////////////////////////////////////////////////////////////
 
   const { t, i18n } = useTranslation();
 
