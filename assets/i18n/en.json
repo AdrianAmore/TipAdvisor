@@ -30,11 +30,15 @@
       "place":"Place quality",
       "vote": "Vote",
       "voteCaption": "Vote sent!",
-      "voteMessage":"We've assigned a percentage according to your votes."
+      "voteMessage":"We've assigned a percentage according to your votes.",
+      "voteMessage2":"Wait for your companions to vote and then click the refresh button"
     },
-    "configuration":{
-      "language":"Language",
-      "mode":"Mode"
+    "grp":{
+      "tCode":"Table Code",
+      "tCodeMsg":"The table code must have 8 characters",
+      "uName": "Your name",
+      "bill" : "Your part of the bill",
+      "errCodeCap": "Invalid table code"
     }
   }
 }
