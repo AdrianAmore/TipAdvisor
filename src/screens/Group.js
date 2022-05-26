@@ -44,26 +44,8 @@ export default function Group({ navigation }) {
     //console.log(total)
   }
 
-
-
-
-  // function rellenaDatos(cm, c, p) {
-  //   setCodigoMesa(cm)
-  //   console.log(codigoMesa)
-  //   setCuenta(c)
-  //   console.log(cuenta)
-  //   setPuntos(p)
-  //   console.log(puntos)
-  // }
-
-
   //Añade un registro
   const addVoto = async () => {
-    // console.log(parseCuenta)
-    // console.log(nombre)
-    // console.log(puntos)
-    // console.log(codigoMesa)
-    // rellenaDatos("ADRIAN12", 19.24, 12)
     const obj = { codigoMesa, puntos, cuenta, nombre }
     const respuesta = await axios.post('http://192.168.1.132/php/', obj)
   }
@@ -145,7 +127,8 @@ export default function Group({ navigation }) {
         [{ onPress: () => {navigation.navigate('Group2',{
           codigoMesa:codigoMesa,
           nombre:nombre,
-          cuenta:cuenta
+          cuenta:cuenta,
+          votos: votos
         } ) } }])
     }
   }

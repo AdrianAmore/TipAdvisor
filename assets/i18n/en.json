@@ -38,7 +38,13 @@
       "tCodeMsg":"The table code must have 8 characters",
       "uName": "Your name",
       "bill" : "Your part of the bill",
-      "errCodeCap": "Invalid table code"
+      "errCodeCap": "Invalid table code",
+      "refresh": "Refresh"
+    },
+    "ftlist":{
+      "name": "Name: ",
+      "tip": "Tip: ",
+      "votes": "Puntuation: "
     }
   }
 }
