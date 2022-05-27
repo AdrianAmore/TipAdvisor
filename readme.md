@@ -56,3 +56,4 @@ class Conexion {
 ### El proyecto solo se ha probado en **localhost**
 El proyecto solo ha sido probado en localhost, eso quiere decir que al descargar la aplicación desde el código QR **no hay una base de datos activa para el apartado de grupo.**
 ## Descargar la aplicación
+**APK en proceso**
