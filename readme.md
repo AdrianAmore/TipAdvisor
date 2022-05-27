@@ -1,3 +1,4 @@
+![](https://imgur.com/a/JBySsek)
 # TipAdvisor<br/>
 En España estamos acostumbrados a dar la cantidad de propina que nos parezca correcta, pero no en todos los países es así.<br/>
 Los expertos en etiqueta señalan que la cantidad correcta de propina se encuentra entre el 15% y el 20% del total de la cuenta.<br/>
