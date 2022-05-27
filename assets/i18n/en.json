@@ -30,7 +30,7 @@
       "place":"Place quality",
       "vote": "Vote",
       "voteCaption": "Vote sent!",
-      "voteMessage":"We've assigned a percentage according to your votes.",
+      "voteMessage":"We recommend this percentage according to your votes",
       "voteMessage2":"Wait for your companions to vote and then click the refresh button"
     },
     "grp":{

@@ -8,31 +8,16 @@ import es from '../../assets/i18n/es.json'
 import { useTranslation } from 'react-i18next';
 import { Button } from 'react-native-paper';
 export default function Survey({ navigation }) {
+  const [pc, setPc] = useState()
   const { t, i18n } = useTranslation();
   const [currentLanguage, setLanguage] = useState("en");
   useEffect(() => {
     setLanguage(utils.lang)
   });
+  let total = 0
   var voteCaption = ""
   var voteMessage = ""
 
-  switch (currentLanguage) {
-
-    case "en":
-      voteCaption = en.translation.survey.voteCaption
-      voteMessage = en.translation.survey.voteMessage
-      break;
-
-    case "es":
-      voteCaption = es.translation.survey.voteCaption
-      voteMessage = es.translation.survey.voteMessage
-      break;
-
-    default:
-      voteCaption = en.translation.survey.voteCaption
-      voteMessage = en.translation.survey.voteMessage
-      break;
-  }
 
 
   //Votos
@@ -47,16 +32,37 @@ export default function Survey({ navigation }) {
   const [place, setPlace] = useState(place)
   if (typeof place === 'undefined') { setPlace(1) }
 
-  var total
+
   const calcular = () => {
-    var total = parseInt(quality) + parseInt(speed) + parseInt(service) + parseInt(quantity) + parseInt(place)
+    total = parseInt(quality) + parseInt(speed) + parseInt(service) + parseInt(quantity) + parseInt(place)
     //console.log(total)
+
+    switch (currentLanguage) {
+
+      case "en":
+        voteCaption = en.translation.survey.voteCaption
+        voteMessage = en.translation.survey.voteMessage + ": " + total + "%"
+        break;
+
+      case "es":
+        voteCaption = es.translation.survey.voteCaption
+        voteMessage = es.translation.survey.voteMessage + ": " + total + "%"
+        break;
+
+      default:
+        voteCaption = en.translation.survey.voteCaption
+        voteMessage = en.translation.survey.voteMessage + ": " + total + "%"
+        break;
+    }
+
+
+    Alert.alert(voteCaption, voteMessage,
+      [{ onPress: () => { utils.porciento = total; navigation.goBack() } }])
   }
 
   const pressHandler = () => {
     calcular()
-    Alert.alert(voteCaption, voteMessage,
-      [{ onPress: () => { utils.porciento = total; navigation.goBack() } }])
+
 
   }
 
@@ -65,10 +71,10 @@ export default function Survey({ navigation }) {
   return (
     <View style={styles.background}>
       <View style={styles.header}>
-      <Text style={{ color: 'white', fontSize: 55, fontFamily: 'Cormorant Garamond Bold' }}>TipAdvisor</Text>
+        <Text style={{ color: 'white', fontSize: 55, fontFamily: 'Cormorant Garamond Bold' }}>TipAdvisor</Text>
       </View>
       <View View style={styles.body}>
-        <Text style={{ marginBottom: 10 , color: 'white', fontFamily: 'Cormorant Garamond Regular', fontSize: 20}}>{t('survey.instructions')}</Text>
+        <Text style={{ marginBottom: 10, color: 'white', fontFamily: 'Cormorant Garamond Regular', fontSize: 20 }}>{t('survey.instructions')}</Text>
         <View style={styles.grpBox}>
           <Text style={{ marginBottom: '2%', marginTop: '2%', fontSize: 20, color: 'white', fontFamily: 'Cormorant Garamond Bold' }}>{t('survey.quality')}</Text>
           <StarRating2 getVoto={quality => setQuality(quality)} />
