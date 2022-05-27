@@ -82,4 +82,4 @@ ErrorDocument 403 /error/HTTP_XAMPP_FORBIDDEN.html.var
 </LocationMatch>
 ```
 ## Descargar la aplicación
-**APK en proceso**
+![TipAdvisorQR](https://user-images.githubusercontent.com/73492292/170793772-4b2879eb-e67c-4c23-a836-b1f0870bd22e.png)
