@@ -55,6 +55,31 @@ class Conexion {
 ```
 ## Importante<br/>
 ### El proyecto solo se ha probado en **localhost**
-El proyecto solo ha sido probado en localhost, eso quiere decir que al descargar la aplicación desde el código QR **no hay una base de datos activa para el apartado de grupo.**
+El proyecto solo ha sido probado en localhost, eso quiere decir que al descargar la aplicación desde el código QR **no hay una base de datos activa para el apartado de grupo.**<br/>
+**Si se hostea el servidor PHP en localhost es necesario realizar las siguientes acciones si se va a utlizar el móvil en vez de un emulador**<br/>
+Editar el archivo de configuracion de Apache "httpd-xampp.conf"
+![Acceso al archivo httpd-xampp.conf](https://user-images.githubusercontent.com/73492292/170788875-d5595b09-e014-4582-a236-7bee74c72953.png)
+<br/>Añadir esto al final del archivo y guardar:
+```
+#
+# New XAMPP security concept
+#
+# Close XAMPP security section here
+<LocationMatch “^/(?i:(?:security))”>
+Order deny,allow
+#Deny from all
+#Allow from ::1 127.0.0.0/8
+Allow from all
+ErrorDocument 403 /error/HTTP_XAMPP_FORBIDDEN.html.var
+</LocationMatch>
+# Close XAMPP sites here
+<LocationMatch “^/(?i:(?:xampp|licenses|phpmyadmin|webalizer|server-status|server-info))”>
+Order deny,allow
+#Deny from all
+#Allow from ::1 127.0.0.0/8
+Allow from all
+ErrorDocument 403 /error/HTTP_XAMPP_FORBIDDEN.html.var
+</LocationMatch>
+```
 ## Descargar la aplicación
 **APK en proceso**
