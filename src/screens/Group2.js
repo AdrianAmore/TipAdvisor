@@ -78,10 +78,7 @@ useEffect(() => {
     return (
         <View style={styles.background}>
             <View style={styles.header}>
-                <Image
-                    style={{ width: 200, height: 100, alignSelf: 'center' }}
-                    source={require('../img/placeholder.png')}
-                />
+            <Text style={{ color: 'white', fontSize: 55, fontFamily: 'Cormorant Garamond Bold' }}>TipAdvisor</Text>
             </View>
             <View style={styles.body}>
                 <View style={styles.grpBox}>
@@ -90,9 +87,9 @@ useEffect(() => {
                         data={votosFiltrados}
                         renderItem={({ item }) => (
                             <Card style={{ marginVertical: '2%' }}>
-                                <Card.Title title={item.nombre} titleStyle={{ color: utils.colors.blue }} />
+                                <Card.Title title={item.nombre} titleStyle={{ color: utils.colors.blue , fontFamily: 'Cormorant Garamond Bold'}} />
                                 <Card.Content>
-                                    <Paragraph style={{ color: utils.colors.blue }}>{t('ftlist.tip')}{Math.round((item.cuenta + Number.EPSILON) * 100) / 100}€{"\n"}{t('ftlist.votes')}{item.puntos} </Paragraph>
+                                    <Paragraph style={{ color: utils.colors.blue , fontFamily: 'Cormorant Garamond Bold'}}>{t('ftlist.tip')}{Math.round((item.cuenta + Number.EPSILON) * 100) / 100}€{"\n"}{t('ftlist.votes')}{item.puntos} </Paragraph>
                                 </Card.Content>
                             </Card>
                         )}
@@ -100,7 +97,7 @@ useEffect(() => {
                 </View>
                 <View style={styles.grpBox}>
                     <Button mode="contained" color='white' style={{ borderRadius: 15, marginTop: '10%' }} onPress={() => { setVotosFiltrados(filteredList); console.log(votosFiltrados); pressHandler() }}>
-                        <Text style={{ color: utils.colors.blue }}>{t('grp.refresh')}</Text>
+                        <Text style={{ color: utils.colors.blue , fontFamily: 'Cormorant Garamond Bold'}}>{t('grp.refresh')}</Text>
                     </Button>
                 </View>
             </View >
@@ -136,7 +133,7 @@ const styles = StyleSheet.create({
         flex: 0.5,
         padding: '3%',
         width: '100%',
-        backgroundColor: 'green',
+        backgroundColor: utils.colors.blue,
         flexDirection: 'row',
 
         justifyContent: 'center',

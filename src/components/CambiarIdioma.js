@@ -39,7 +39,7 @@ const CambiarIdioma = () => {
 
 
     return (
-        <TouchableOpacity onPress={() => handlePress()} style={{ alignSelf: 'flex-end', marginLeft: '36%' }}>
+        <TouchableOpacity onPress={() => handlePress()} style={{ alignSelf: 'flex-end'}}>
             <Image source={banderas[contador]} style={{ width: 50, height: 30 }}></Image>
         </TouchableOpacity>
 

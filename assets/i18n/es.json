@@ -37,7 +37,7 @@
       "tCode": "Numero de mesa",
       "tCodeMsg":"El código de mesa debe ser de 8 caracteres",
       "uName": "Tu nombre",
-      "bill" : "Tu parte de la cuenta",
+      "bill" : "Parte cuenta",
       "errCodeCap": "Código de mesa no valido",
       "refresh": "Recargar"
     },

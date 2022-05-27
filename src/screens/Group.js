@@ -62,7 +62,7 @@ export default function Group({ navigation }) {
   });
   var voteCaption = ""
   var voteMessage = ""
-  var voteMessage2= ""
+  var voteMessage2 = ""
   var tCodeMsg = ""
   var errCodeCap = ""
 
@@ -73,7 +73,7 @@ export default function Group({ navigation }) {
       voteMessage = en.translation.survey.voteMessage
       voteMessage2 = en.translation.survey.voteMessage2
       tCodeMsg = en.translation.grp.tCodeMsg
-      errCodeCap=en.translation.grp.errCodeCap
+      errCodeCap = en.translation.grp.errCodeCap
       break;
 
     case "es":
@@ -81,7 +81,7 @@ export default function Group({ navigation }) {
       voteMessage = es.translation.survey.voteMessage
       voteMessage2 = es.translation.survey.voteMessage2
       tCodeMsg = es.translation.grp.tCodeMsg
-      errCodeCap=es.translation.grp.errCodeCap
+      errCodeCap = es.translation.grp.errCodeCap
       break;
 
     default:
@@ -89,7 +89,7 @@ export default function Group({ navigation }) {
       voteMessage = en.translation.survey.voteMessage
       voteMessage2 = en.translation.survey.voteMessage2
       tCodeMsg = en.translation.grp.tCodeMsg
-      errCodeCap=en.translation.grp.errCodeCap
+      errCodeCap = en.translation.grp.errCodeCap
       break;
   }
 
@@ -124,12 +124,16 @@ export default function Group({ navigation }) {
       calcular()
       addVoto()
       Alert.alert(voteCaption, voteMessage2,
-        [{ onPress: () => {navigation.navigate('Group2',{
-          codigoMesa:codigoMesa,
-          nombre:nombre,
-          cuenta:cuenta,
-          votos: votos
-        } ) } }])
+        [{
+          onPress: () => {
+            navigation.navigate('Group2', {
+              codigoMesa: codigoMesa,
+              nombre: nombre,
+              cuenta: cuenta,
+              votos: votos
+            })
+          }
+        }])
     }
   }
 
@@ -174,17 +178,17 @@ export default function Group({ navigation }) {
 
       </View>
       <View View style={styles.body}>
-        <Text style={{ marginBottom: 10 }}>{t('survey.instructions')}</Text>
+        <Text style={{ marginBottom: 10, color: 'white', fontFamily: 'Cormorant Garamond Regular', fontSize: 20 }}>{t('survey.instructions')}</Text>
         <View style={styles.grpBox}>
-          <Text style={{ marginBottom: '2%', marginTop: '2%', fontSize: 20 }}>{t('survey.quality')}</Text>
+          <Text style={{ marginBottom: '2%', marginTop: '2%', fontSize: 20, color: 'white', fontFamily: 'Cormorant Garamond Bold' }}>{t('survey.quality')}</Text>
           <StarRating2 getVoto={quality => setQuality(quality)} />
-          <Text style={{ marginBottom: '2%', marginTop: '2%', fontSize: 20 }}>{t('survey.speed')}</Text>
+          <Text style={{ marginBottom: '2%', marginTop: '2%', fontSize: 20, color: 'white', fontFamily: 'Cormorant Garamond Bold' }}>{t('survey.speed')}</Text>
           <StarRating2 getVoto={speed => setSpeed(speed)} />
-          <Text style={{ marginBottom: '2%', marginTop: '2%', fontSize: 20 }}>{t('survey.service')}</Text>
+          <Text style={{ marginBottom: '2%', marginTop: '2%', fontSize: 20, color: 'white', fontFamily: 'Cormorant Garamond Bold' }}>{t('survey.service')}</Text>
           <StarRating2 getVoto={service => setService(service)} />
-          <Text style={{ marginBottom: '2%', marginTop: '2%', fontSize: 20 }}>{t('survey.quantity')}</Text>
+          <Text style={{ marginBottom: '2%', marginTop: '2%', fontSize: 20, color: 'white', fontFamily: 'Cormorant Garamond Bold' }}>{t('survey.quantity')}</Text>
           <StarRating2 getVoto={quantity => setQuantity(quantity)} />
-          <Text style={{ marginBottom: '2%', marginTop: '2%', fontSize: 20 }}>{t('survey.place')}</Text>
+          <Text style={{ marginBottom: '2%', marginTop: '2%', fontSize: 20, color: 'white', fontFamily: 'Cormorant Garamond Bold' }}>{t('survey.place')}</Text>
           <StarRating2 getVoto={place => setPlace(place)} />
           <Button mode="contained" color='white' style={{ borderRadius: 15, marginTop: '10%' }} onPress={() => pressHandler()}>
             <Text style={{ color: utils.colors.blue }}>{t('survey.vote')}</Text>
@@ -221,7 +225,7 @@ const styles = StyleSheet.create({
     flex: 0.5,
     padding: '3%',
     width: '100%',
-    backgroundColor: 'green',
+    backgroundColor: utils.colors.blue,
     flexDirection: 'row',
 
     justifyContent: 'center',
@@ -245,11 +249,10 @@ const styles = StyleSheet.create({
   box: {
     height: 35,
     width: '30%',
-    fontSize: 14,
+    fontSize: 15,
     borderBottomRightRadius: 10,
     borderBottomLeftRadius: 10,
     borderTopLeftRadius: 10,
-    borderTopRightRadius: 10
-
+    borderTopRightRadius: 10,
   }
 });

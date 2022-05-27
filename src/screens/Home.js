@@ -16,7 +16,7 @@ function Home({ navigation }) {
   useEffect(() => {
     setLanguage(utils.lang)
     if (parseInt(utils.porciento) != 0) {
-      setPorcentaje(porcentaje=utils.porciento.toString())
+      setPorcentaje(porcentaje = utils.porciento.toString())
     }
   });
   var p1
@@ -62,14 +62,21 @@ function Home({ navigation }) {
     // console.log(currentLanguage)
     var p = porcentaje / 100; //console.log(p)
     var propina = total * p; //console.log(propina)
+    propina = Math.round((propina + Number.EPSILON) * 100) / 100
     var totProp = parseFloat(propina) + parseFloat(total); //console.log(totProp)
+    totProp = Math.round((totProp + Number.EPSILON) * 100) / 100
     var split = propina / comensales
+    split = Math.round((split + Number.EPSILON) * 100) / 100
     var totSplit = (parseFloat(total) / parseFloat(comensales)) + parseFloat(split)
+    totSplit = Math.round((totSplit + Number.EPSILON) * 100) / 100
 
     if (checked) {
       propina = Math.round(propina)
+      
       totProp = Math.round(totProp)
+
       split = Math.round(split)
+
       totSplit = Math.round(totSplit)
     }
     if (total != "" && porcentaje != "") {
@@ -94,10 +101,7 @@ function Home({ navigation }) {
   return (
     <View style={styles.background}>
       <View style={styles.header}>
-      <Image
-          style={{ width: 200, height: 100, alignSelf: 'flex-start' }}
-          source={require('../img/placeholder.png')}
-        />
+        <Text style={{ color: 'white', fontSize: 55, fontFamily: 'Cormorant Garamond Bold' }}>TipAdvisor</Text>
         <CambiarIdioma></CambiarIdioma>
       </View>
       <View View style={styles.body}>
@@ -107,17 +111,17 @@ function Home({ navigation }) {
           <Field label={t('home.percentage')} type='numeric' changeValue={porcentaje => setPorcentaje(porcentaje)} text={porcentaje}></Field>
           <CheckB label={t('home.round')} changeValue={checked => setChecked(checked)}></CheckB>
           <Button mode="contained" color='white' style={{ borderRadius: 15 }} onPress={() => calcular()}>
-            <Text style={{ color: utils.colors.blue }}>{t('home.btnCalculate')}</Text>
+            <Text style={{ color: utils.colors.blue, fontFamily: 'Cormorant Garamond Bold' }}>{t('home.btnCalculate')}</Text>
           </Button>
           <Button mode="contained" color='white' style={{ borderRadius: 15, height: 30, width: 100 }} onPress={() => clear()}>
-            <Text style={{ color: utils.colors.blue, fontSize: 10 }}>{t('home.btnClear')}</Text>
+            <Text style={{ color: utils.colors.blue, fontSize: 12, fontFamily: 'Cormorant Garamond Bold' }}>{t('home.btnClear')}</Text>
           </Button>
         </View>
-        <Text style={{ color: 'white', fontFamily: 'HARRINGT', marginBottom: '-20%' }}>{msgCalculo}</Text>
+        <Text style={{ color: 'white', fontFamily: 'Cormorant Garamond Bold', marginBottom: '-20%', fontSize: 20 }}>{msgCalculo}</Text>
         <View style={styles.grpBox}>
-          <Text style={{ color: 'white', marginBottom: '-40%' }}>{t('home.survey')}</Text>
+          <Text style={{ color: 'white', marginBottom: '-40%', fontFamily: 'Cormorant Garamond Bold', fontSize: 20 }}>{t('home.survey')}</Text>
           <Button mode="contained" color='white' style={{ borderRadius: 15, marginBottom: '-35%' }} onPress={() => navigation.navigate('Survey')}>
-            <Text style={{ color: utils.colors.blue }}>{t('home.btnSurvey')}</Text>
+            <Text style={{ color: utils.colors.blue, fontFamily: 'Cormorant Garamond Bold' }}>{t('home.btnSurvey')}</Text>
           </Button>
         </View>
       </View >
@@ -151,8 +155,9 @@ const styles = StyleSheet.create({
   header: {
     flex: 0.5,
     width: '100%',
-    backgroundColor: 'green',
-    flexDirection: 'row'
+    backgroundColor: utils.colors.blue,
+    flexDirection: 'row',
+    justifyContent: 'space-evenly'
   },
   grpBox: {
     flex: 1,

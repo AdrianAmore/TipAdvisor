@@ -47,7 +47,7 @@ export default function Survey({ navigation }) {
   const [place, setPlace] = useState(place)
   if (typeof place === 'undefined') { setPlace(1) }
 
-var total
+  var total
   const calcular = () => {
     var total = parseInt(quality) + parseInt(speed) + parseInt(service) + parseInt(quantity) + parseInt(place)
     //console.log(total)
@@ -65,26 +65,23 @@ var total
   return (
     <View style={styles.background}>
       <View style={styles.header}>
-        <Image
-          style={{ width: 200, height: 100, alignSelf: 'center' }}
-          source={require('../img/placeholder.png')}
-        />
+      <Text style={{ color: 'white', fontSize: 55, fontFamily: 'Cormorant Garamond Bold' }}>TipAdvisor</Text>
       </View>
       <View View style={styles.body}>
-        <Text style={{ marginBottom: 10 }}>{t('survey.instructions')}</Text>
+        <Text style={{ marginBottom: 10 , color: 'white', fontFamily: 'Cormorant Garamond Regular', fontSize: 20}}>{t('survey.instructions')}</Text>
         <View style={styles.grpBox}>
-          <Text style={{ marginBottom: '2%', marginTop: '2%', fontSize: 20 }}>{t('survey.quality')}</Text>
+          <Text style={{ marginBottom: '2%', marginTop: '2%', fontSize: 20, color: 'white', fontFamily: 'Cormorant Garamond Bold' }}>{t('survey.quality')}</Text>
           <StarRating2 getVoto={quality => setQuality(quality)} />
-          <Text style={{ marginBottom: '2%', marginTop: '2%', fontSize: 20 }}>{t('survey.speed')}</Text>
+          <Text style={{ marginBottom: '2%', marginTop: '2%', fontSize: 20, color: 'white', fontFamily: 'Cormorant Garamond Bold' }}>{t('survey.speed')}</Text>
           <StarRating2 getVoto={speed => setSpeed(speed)} />
-          <Text style={{ marginBottom: '2%', marginTop: '2%', fontSize: 20 }}>{t('survey.service')}</Text>
+          <Text style={{ marginBottom: '2%', marginTop: '2%', fontSize: 20, color: 'white', fontFamily: 'Cormorant Garamond Bold' }}>{t('survey.service')}</Text>
           <StarRating2 getVoto={service => setService(service)} />
-          <Text style={{ marginBottom: '2%', marginTop: '2%', fontSize: 20 }}>{t('survey.quantity')}</Text>
+          <Text style={{ marginBottom: '2%', marginTop: '2%', fontSize: 20, color: 'white', fontFamily: 'Cormorant Garamond Bold' }}>{t('survey.quantity')}</Text>
           <StarRating2 getVoto={quantity => setQuantity(quantity)} />
-          <Text style={{ marginBottom: '2%', marginTop: '2%', fontSize: 20 }}>{t('survey.place')}</Text>
+          <Text style={{ marginBottom: '2%', marginTop: '2%', fontSize: 20, color: 'white', fontFamily: 'Cormorant Garamond Bold' }}>{t('survey.place')}</Text>
           <StarRating2 getVoto={place => setPlace(place)} />
           <Button mode="contained" color='white' style={{ borderRadius: 15, marginTop: '10%' }} onPress={() => pressHandler()}>
-            <Text style={{ color: utils.colors.blue }}>{t('survey.vote')}</Text>
+            <Text style={{ color: utils.colors.blue, fontFamily: 'Cormorant Garamond Bold' }}>{t('survey.vote')}</Text>
           </Button>
         </View>
       </View >
@@ -117,7 +114,7 @@ const styles = StyleSheet.create({
   header: {
     flex: 0.5,
     width: '100%',
-    backgroundColor: 'green'
+    backgroundColor: utils.colors.blue,
   },
   grpBox: {
     flex: 1,
