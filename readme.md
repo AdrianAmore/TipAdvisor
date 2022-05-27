@@ -1,8 +1,8 @@
-#TipAdvisor<br/>
+# TipAdvisor<br/>
 En España estamos acostumbrados a dar la cantidad de propina que nos parezca correcta, pero no en todos los países es así.<br/>
 Los expertos en etiqueta señalan que la cantidad correcta de propina se encuentra entre el 15% y el 20% del total de la cuenta.<br/>
 TipAdvisor es una herramienta que facilita ese cálculo y permite recompensar de manera correcta un buen servicio eligiendo el porcentaje que se desea entregar como propina y dividiéndolo entre todos los comensales.<br/>
-##Guía de instalación del proyecto
+## Guía de instalación del proyecto
 1. Clonar el repositorio.
 2. ```npm install```
 3. ```npm i react-native-splash-screen --save```
@@ -52,7 +52,7 @@ class Conexion {
 
 ?>
 ```
-##Importante<br/>
-###El proyecto solo se ha probado en **localhost**
+## Importante<br/>
+### El proyecto solo se ha probado en **localhost**
 El proyecto solo ha sido probado en localhost, eso quiere decir que al descargar la aplicación desde el código QR **no hay una base de datos activa para el apartado de grupo.**
-##Descargar la aplicación
+## Descargar la aplicación
