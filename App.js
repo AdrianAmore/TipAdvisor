@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 import SplashScreen from 'react-native-splash-screen'
 import Home from './src/screens/Home'
 import Survey from './src/screens/Survey'
+import Group2 from './src/screens/Group2';
 import Configuration from './src/screens/Configuration';
 import Group from './src/screens/Group'
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -71,6 +72,7 @@ function MyStack() {
     }}>
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Survey" component={Survey} />
+      <Stack.Screen name="Group2" component={Group2} />
     </Stack.Navigator>
   );
 }

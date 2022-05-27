@@ -10,31 +10,41 @@
       "survey": "¿No sabes que porcentaje proporcionar?",
       "btnSurvey": "Realizar Encuesta"
     },
-    "message":{
+    "message": {
       "p1": "Total: ",
       "p2": "€\nTotal + propina: ",
       "p3": "€\nPropina por persona: ",
       "p4": "€\nPrecio total + propina por persona: "
     },
-    "main":{
-      "individual":"Individual",
-      "group":"Grupo",
-      "configuration":"Configuración"
+    "main": {
+      "individual": "Individual",
+      "group": "Grupo",
+      "configuration": "Configuración"
     },
-    "survey":{
+    "survey": {
       "instructions": "Por favor, vota de 1 a 5 estrellas en las siguientes categorías y asignaremos una cantidad acorde a tu nivel de satisfacción.",
-      "quality":"Calidad de la comida",
+      "quality": "Calidad de la comida",
       "speed": "Velocidad del servicio",
-      "service":"Calidad del servicio",
+      "service": "Calidad del servicio",
       "quantity": "Cantidad de comida",
-      "place":"Calidad del establecimiento",
+      "place": "Calidad del establecimiento",
       "vote": "Votar",
       "voteCaption": "Voto enviado!",
-      "voteMessage":"Hemos asignado un porcentaje de acuerdo a tus votos."
+      "voteMessage": "Te recomendamos asignar este porcentaje de acuerdo a tus votos",
+      "voteMessage2":"Espera a que tus compañeros voten y después pulsa el botón de recarga"
     },
-    "configuration":{
-      "language":"Idioma",
-      "mode":"Modo"
+    "grp": {
+      "tCode": "Numero de mesa",
+      "tCodeMsg":"El código de mesa debe ser de 8 caracteres",
+      "uName": "Tu nombre",
+      "bill" : "Parte cuenta",
+      "errCodeCap": "Código de mesa no valido",
+      "refresh": "Recargar"
+    },
+    "ftlist":{
+      "name": "Nombre: ",
+      "tip": "Propina: ",
+      "votes": "Puntuación: "
     }
   }
 }
