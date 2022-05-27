@@ -25,22 +25,3 @@ if($method == "POST"){
     $json = $api->addVoto($codigoMesa, $puntos,$cuenta,$nombre);
     echo $json;
 }
-
-if($method=="DELETE"){
-    $json = null;
-    $id = $_REQUEST['id'];
-    $api = new Api();
-    $json = $api->deleteLibro($id);
-    echo $json;
-}
-
-if($method == "PUT"){
-    $json = null;
-    $data = json_decode(file_get_contents("php://input"), true);
-    $id = $data['id'];
-    $nombre = $data['nombre'];
-    $edicion = $data['edicion'];
-    $api = new Api();
-    $json = $api->updateLibro($id, $nombre, $edicion);
-    echo $json;
-}
